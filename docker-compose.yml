@@ -1,0 +1,35 @@
+services:
+
+  postgres:
+    image: postgres:17-alpine
+    container_name: resilienceops-db
+
+    environment:
+      POSTGRES_DB: resilienceops
+      POSTGRES_USER: resilienceops
+      POSTGRES_PASSWORD: resilienceops
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    ports:
+      - "5432:5432"
+
+
+  app:
+    build: .
+
+    container_name: resilienceops-app
+
+    depends_on:
+      - postgres
+
+    environment:
+      DATABASE_URL: postgresql://resilienceops:resilienceops@postgres:5432/resilienceops
+
+    ports:
+      - "8000:8000"
+
+
+volumes:
+  postgres_data:

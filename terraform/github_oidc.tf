@@ -31,7 +31,7 @@ resource "aws_iam_role" "github_oidc_role" {
           }
 
           StringLike = {
-            "token.actions.githubusercontent.com:sub" = "repo:yahiaouiraouf216/resilienceops:*"
+            "token.actions.githubusercontent.com:sub" = "repo:yahiaouiraouf216/Resilienceops:*"
           }
         }
       }

@@ -11,7 +11,7 @@ resource "aws_iam_openid_connect_provider" "github" {
 }
 
 resource "aws_iam_role" "github_oidc_role" {
-  name = "resilienceops-github-oidc-role"
+  name = "Resilienceops-github-oidc-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -38,7 +38,7 @@ resource "aws_iam_role" "github_oidc_role" {
 }
 
 resource "aws_iam_role_policy" "github_oidc_policy" {
-  name = "resilienceops-github-oidc-policy"
+  name = "Resilienceops-github-oidc-policy"
   role = aws_iam_role.github_oidc_role.id
 
   policy = jsonencode({
@@ -72,7 +72,7 @@ resource "aws_iam_role_policy" "github_oidc_policy" {
 }
 
 resource "aws_iam_role_policy" "github_eks_oidc_policy" {
-  name = "resilienceops-github-eks-oidc-policy"
+  name = "Resilienceops-github-eks-oidc-policy"
   role = aws_iam_role.github_oidc_role.id
 
   policy = jsonencode({

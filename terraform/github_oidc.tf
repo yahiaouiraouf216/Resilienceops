@@ -29,8 +29,7 @@ resource "aws_iam_role" "github_oidc_role" {
         Condition = {
           StringEquals = {
             "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
-            "token.actions.githubusercontent.com:sub" = "repo:yahiaouiraouf216/Resilienceops:ref:refs/heads/main"
-          }
+            "token.actions.githubusercontent.com:sub" = "repo:yahiaouiraouf216@86567040/Resilienceops@1380217423:ref:refs/heads/main"          }
         }
       }
     ]
